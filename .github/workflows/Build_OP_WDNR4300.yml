@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: Build_WNDR4300
+name: Build_netgear_wndr4300
 
 on: 
   release:
@@ -68,9 +68,9 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         ./scripts/feeds install -a
-    - name: Configuration Customization - Build_WNDR4300
+    - name: Configuration Customization - Build_netgear_wndr4300
       env:
-        CONFIG_FILE: 'WNDR4300.config'
+        CONFIG_FILE: 'netgear_wndr4300.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
