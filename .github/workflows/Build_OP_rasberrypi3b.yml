@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: Build_tl-wr841-v8
+name: Build_rasberrypi3b
 
 on: 
   release:
@@ -18,8 +18,8 @@ on:
  #schedule:   -
  #   - cron: 0 8 * * 5
   
-  #watch:
-   # types: [started]
+  watch:
+    types: [started]
 
 jobs:
   build:
@@ -68,9 +68,9 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         ./scripts/feeds install -a
-    - name: Configuration Customization - Build_tl-wr841-v8
+    - name: Configuration Customization - Build_rasberrypi3b
       env:
-        CONFIG_FILE: 'tl-wr841-v8_dif.config'
+        CONFIG_FILE: 'rasberrypi3b_dif.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
