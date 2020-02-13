@@ -5,7 +5,7 @@
 # Youtube Channel: https://goo.gl/fvkdwm 
 #=================================================
 
-name: Build_rasberrypi3b
+name: Build_raspberrypi3b
 
 on: 
   release:
@@ -68,9 +68,9 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         ./scripts/feeds install -a
-    - name: Configuration Customization - Build_rasberrypi3b
+    - name: Configuration Customization - Build_raspberrypi3b
       env:
-        CONFIG_FILE: 'rasberrypi3b_dif.config'
+        CONFIG_FILE: 'raspberrypi3b_dif.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
