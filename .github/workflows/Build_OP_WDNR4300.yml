@@ -10,8 +10,7 @@ name: Build_netgear_wndr4300
 on: 
   release:
     types: [published]
-  
- push:
+  push:
       branches:
           - master
  
